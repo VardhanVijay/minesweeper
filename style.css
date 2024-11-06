@@ -1,0 +1,141 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mineswipper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 5vw;
+}
+.minesweeper-level{
+    min-width: 5dvw;
+    height: 4dvh;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+}
+.flag-no{
+    color: white;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2% 5%;
+    background-color: green;
+    border: 2px solid black;
+}
+.restart{
+    min-width: 4dvw;
+    height: 4dvh;
+    border: none;
+    border-radius: 5px;
+}
+.game-board{
+    max-width: 400px;
+    height: 100%;
+    width: 100%;
+    /* padding: 20px; */
+}
+.game-row{
+    display: flex;
+    /* background-color: #719032 */
+}
+.game-col{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #a7d64f;
+    align-items: center;
+}
+.game-col.disabled {
+    pointer-events: none;       
+}
+.game-row:nth-child(odd) .game-col:nth-child(even),
+.game-row:nth-child(even) .game-col:nth-child(odd){
+    background-color: #bcee59;
+}
+.game-col:hover{
+    background-color:rgb(110, 186, 55) !important;
+    border: 2px solid rgb(236, 223, 223);
+}
+.backgroundChange-odd{
+    background-color: #E5C29F !important;
+}
+.backgroundChange-even{
+    background-color: #D7B899 !important;
+}
+.gameover{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 10px;
+    margin-top: -70%;
+    /* background-color: aquamarine;   */
+    /* opacity: 0.8;  */
+}
+.overmsg{
+    text-align: center;
+    padding: 20px;
+    width: 80%;
+    height: 80%;
+    border: 2px silver solid;
+    color: red;
+    border-radius: 10px;
+    background-color: aqua;
+}
+.gameover button{
+    height: 5dvh;
+    width: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: aqua;
+    color: rgb(9, 40, 97);
+    border: none;
+    font-weight: bold;
+}
+
+@media (max-width: 400px) {
+    .mineswipper {
+        max-width: 95vw;
+    }
+    .header {
+        width: 100%;
+        padding: 3% 4%;
+    }
+    .header button {
+        width: 40vw;
+        height: 5vh;
+    }
+    .game-col {
+        width: 10vw;
+        height: 10vw;
+        max-width: 30px;
+        max-height: 30px;
+        font-size: 3.5vw;
+    }
+    .overmsg {
+        width: 90%;
+        padding: 3vh;
+    }
+}
+
+
